@@ -1,6 +1,6 @@
 {
   "name": "eos-sign-validator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "main": "bin/index.js",
   "bin": {
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/khgame/loginsvr#readme",
   "dependencies": {
+    "commander": "^2.20.0",
     "eosplayer": "^0.5.11",
     "fs-extra": "^7.0.1",
     "koa": "^2.7.0",

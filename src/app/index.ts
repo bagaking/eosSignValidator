@@ -4,7 +4,7 @@ import * as commander from "commander";
 import {Application} from "..";
 
 async function main() {
-    commander.version('0.1.0')
+    commander.version('0.1.1')
         .description('start running validator server')
         .option('-d, --development',
             '(default env setting) similar to set NODE_ENV=development, and will read login.development.json at executing position as config by default',
