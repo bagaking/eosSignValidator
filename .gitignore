@@ -1,3 +1,9 @@
+# env
+.idea
+
+# build
+bin
+
 # Logs
 logs
 *.log
