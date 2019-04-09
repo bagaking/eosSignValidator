@@ -1,10 +1,10 @@
 import * as Koa from "koa";
 
-import { createServer, Server } from "http";
+import {createServer, Server} from "http";
 import {useMiddlewares} from "./middlewares";
 import {useRouters} from "./router";
 
-const objectToArray = (dict: any): any[] => Object.keys(dict).map((name) => dict[name]);
+export * from "./methods";
 
 export class Application {
     public koa: Koa;
