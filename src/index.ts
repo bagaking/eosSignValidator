@@ -6,8 +6,8 @@ import {useRouters} from "./router";
 
 const objectToArray = (dict: any): any[] => Object.keys(dict).map((name) => dict[name]);
 
-export class ApiApplication {
-    private koa: Koa;
+export class Application {
+    public koa: Koa;
     private server: Server;
 
     constructor() {
@@ -36,7 +36,7 @@ export class ApiApplication {
     }
 
     public start(port: number) {
-        this.koa.listen(port, (): void => {
+        return this.koa.listen(port, (): void => {
             console.log(`Koa server has started, running at: http://127.0.0.1:${port}. `);
         });
     }

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import * as commander from "commander";
-import {ApiApplication} from "..";
+import {Application} from "..";
 import * as Path from 'path';
 import * as fs from "fs-extra";
 
@@ -18,7 +18,7 @@ async function main() {
             'the port to serve api, 11601 by default')
         .action((options) => {
             const port = (options && options.port) || 11601;
-            const api = new ApiApplication();
+            const api = new Application();
             api.start(port);
         });
 
