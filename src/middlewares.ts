@@ -1,5 +1,5 @@
 import * as Koa from "koa";
-import * as cors from "@koa/cors";
+import * as cors from "kcors";
 import * as bodyParser from "koa-bodyparser";
 import * as logger from "koa-logger";
 
