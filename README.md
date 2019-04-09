@@ -6,7 +6,7 @@
 
 ## install
 
-`npm i -g eosSignValidator`
+`npm i -g eos-sign-validator`
 
 ## start validator
 
