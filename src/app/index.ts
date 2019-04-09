@@ -2,8 +2,6 @@
 
 import * as commander from "commander";
 import {Application} from "..";
-import * as Path from 'path';
-import * as fs from "fs-extra";
 
 async function main() {
     commander.version('0.1.0')

@@ -13,7 +13,6 @@ export class Application {
     constructor() {
         this.koa = new Koa();
         this.server = createServer(this.koa.callback());
-        this.init();
     }
 
     private init() {
@@ -36,6 +35,7 @@ export class Application {
     }
 
     public start(port: number) {
+        this.init();
         return this.koa.listen(port, (): void => {
             console.log(`Koa server has started, running at: http://127.0.0.1:${port}. `);
         });
