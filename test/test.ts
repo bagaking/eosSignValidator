@@ -5,7 +5,7 @@ import {assert} from "chai";
 describe('validate', function () {
     process.env.NODE_ENV = "production";
 
-    const server = new Application().start(9999);
+    const server = new Application().server;
 
     it('correct situation', function (done) {
         this.timeout(10000);

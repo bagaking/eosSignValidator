@@ -8,11 +8,12 @@ export * from "./methods";
 
 export class Application {
     public koa: Koa;
-    private server: Server;
+    public server: Server;
 
     constructor() {
         this.koa = new Koa();
         this.server = createServer(this.koa.callback());
+        this.init();
     }
 
     private init() {
@@ -32,10 +33,10 @@ export class Application {
 
         useMiddlewares(this.koa, process.env.NODE_ENV || "development");
         useRouters(this.koa);
+        return this;
     }
 
     public start(port: number) {
-        this.init();
         return this.koa.listen(port, (): void => {
             console.log(`Koa server has started, running at: http://127.0.0.1:${port}. `);
         });

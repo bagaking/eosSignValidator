@@ -2,8 +2,6 @@ import * as Router from 'koa-router'
 import * as Koa from "koa";
 import * as methods from "./methods"
 
-const objectToArray = (dict: any): any[] => Object.keys(dict).map((name) => dict[name]);
-
 const router = new Router();
 
 export const useRouters = (app: Koa): Koa => {
@@ -20,7 +18,7 @@ export const useRouters = (app: Koa): Koa => {
                 };
                 return await next();
             })
-            console.log("create api /", name)
+            // console.log("create api /", name)
         }
     );
 
