@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "mocha -r ts-node/register test/**/*.ts",
-    "build": "npx tsc",
+    "build": "npm run test && rimraf ./bin && npx tsc && cp ./src/*.json ./bin",
     "app": "ts-node ./src/app",
     "watch": "cross-env nodemon --inspect --watch 'src/**/*' -e ts,tsx --exec 'node -r ts-node/register' ./src/app",
     "prepublishOnly": "npm run build"
@@ -48,6 +48,7 @@
     "cross-env": "^5.2.0",
     "mocha": "^6.1.2",
     "nodemon": "^1.18.10",
+    "rimraf": "^2.6.3",
     "supertest": "^4.0.2",
     "ts-node": "^8.0.3",
     "tslint": "^5.15.0",
