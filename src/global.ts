@@ -4,6 +4,7 @@ import * as Path from 'path';
 export class Global {
     static conf: any;
     static confPath: any;
+    static version: string = "0.1.7";
 
     static setConf(path: string, force: boolean) {
         if (!force && Global.conf) {

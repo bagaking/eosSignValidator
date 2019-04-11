@@ -7,7 +7,7 @@ import {Global} from "../global";
 import * as fs from "fs-extra";
 
 async function main() {
-    commander.version('0.1.5')
+    commander.version(Global.version)
         .description('start running validator server')
         .option('-d, --development',
             '(default env setting) similar to set NODE_ENV=development, and will read eos_sign_validator.development.json at executing position as config by default',
