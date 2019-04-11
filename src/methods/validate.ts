@@ -1,6 +1,5 @@
 import {ReadingPlayer} from "eosplayer";
 import {MykeyPlugin} from "eosplayer/build/lib/plugins";
-import {Error} from "tslint/lib/error";
 import {Global} from "../global";
 
 let readingPlayer: ReadingPlayer;

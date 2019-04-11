@@ -1,6 +1,6 @@
 {
   "name": "eos-sign-validator",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "",
   "main": "bin/index.js",
   "bin": {
@@ -10,7 +10,8 @@
     "test": "mocha -r ts-node/register test/**/*.ts",
     "build": "npx tsc",
     "app": "ts-node ./src/app",
-    "watch": "cross-env nodemon --inspect --watch 'src/**/*' -e ts,tsx --exec 'node -r ts-node/register' ./src/app"
+    "watch": "cross-env nodemon --inspect --watch 'src/**/*' -e ts,tsx --exec 'node -r ts-node/register' ./src/app",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
