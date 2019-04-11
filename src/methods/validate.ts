@@ -1,21 +1,9 @@
 import {ReadingPlayer} from "eosplayer";
 import {MykeyPlugin} from "eosplayer/build/lib/plugins";
-
-const eos_read = {
-    node: {
-        chainId: "aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906",
-        mockTransactions: () => null,
-        expireInSeconds: 60,
-        broadcast: true,
-        debug: false,
-    },
-    urls: [
-        "https://proxy.eosnode.tools"
-    ],
-};
+import {Error} from "tslint/lib/error";
+import {Global} from "../global";
 
 let readingPlayer: ReadingPlayer;
-
 
 export const validate = async (data: {
     validatorIdentity: string,
@@ -24,8 +12,8 @@ export const validate = async (data: {
     secret: string,
     algorithm: string
 }) => {
-
-    readingPlayer = readingPlayer || new ReadingPlayer(eos_read);
+    const {node, urls} = Global.conf;
+    readingPlayer = readingPlayer || new ReadingPlayer({node, urls});
     const {validatorIdentity, userIdentity, loginToken, secret, algorithm} = data;
     if (validatorIdentity !== 'eos') {
         throw new Error(`validator identity error, expected eos, got ${validatorIdentity}.`);
