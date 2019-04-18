@@ -53,6 +53,7 @@ for linux
 3. create and run container: `docker run <imageName:imageTag> -p <hostPort>:11601 [-d]`
 4. visit the validator in your browser: `http://127.0.0.1:<hostPort>/info`
 
+> for linux platform (debian), the image take about 120mb of desk size
 
 
 
