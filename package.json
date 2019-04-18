@@ -6,12 +6,25 @@
   "bin": {
     "eosSignValidator": "bin/app/index.js"
   },
+  "pkg": {
+    "scripts": [
+      "bin/**/*.js"
+    ],
+    "assets": [
+      "bin/**/*.json"
+    ]
+  },
   "scripts": {
     "test": "mocha -r ts-node/register test/**/*.ts",
     "build": "npm run test && rimraf ./bin && npx tsc && cp ./src/*.json ./bin",
     "app": "ts-node ./src/app",
     "watch": "cross-env nodemon --inspect --watch 'src/**/*' -e ts,tsx --exec 'node -r ts-node/register' ./src/app",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "pkg:macos": "pkg . -t macos --out-path pkg_macos",
+    "pkg:alpine": "pkg . -t alpine --out-path pkg_alpine",
+    "pkg:freebsd": "pkg . -t freebsd --out-path pkg_freebsd",
+    "pkg:linux": "pkg . -t linux --out-path pkg_linux",
+    "pkg:win": "pkg . -t win --out-path pkg_win"
   },
   "repository": {
     "type": "git",
@@ -48,6 +61,7 @@
     "cross-env": "^5.2.0",
     "mocha": "^6.1.2",
     "nodemon": "^1.18.10",
+    "pkg": "^4.3.7",
     "rimraf": "^2.6.3",
     "supertest": "^4.0.2",
     "ts-node": "^8.0.3",

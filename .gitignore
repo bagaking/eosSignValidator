@@ -3,6 +3,7 @@
 
 # build
 bin
+pkg_*/
 
 # Logs
 logs
